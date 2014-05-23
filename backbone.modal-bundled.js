@@ -165,7 +165,9 @@
           case 27:
             return this.triggerCancel();
           case 13:
-            return this.triggerSubmit();
+            if ((this.args.ignoreEnter == null) || this.args.ignoreEnter === false) {
+              return this.triggerSubmit();
+            }
         }
       }
     };
